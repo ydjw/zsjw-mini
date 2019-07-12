@@ -6,11 +6,14 @@ class EducationApi {
      *项目通用get请求
      */
   commonGet(params) {
-    return Taro.request({
+
+      let token = Taro.getStorageSync('token')
+      return Taro.request({
       url: Config.baseUrl + '/app.do',
       data: params,
-      headers: {
+      header: {
         'Content-Type': 'application/json',
+        'token':token
       },
       method: 'GET',
     });

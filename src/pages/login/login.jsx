@@ -41,14 +41,14 @@ class Login extends Component {
             className='input'
             name='value'
             type='text'
-            placeholder='标准五个字'
+            placeholder='请输入账号'
             value={this.state.value}
           />
           <AtInput
             className='input'
             name='value'
             type='password'
-            placeholder='标准五个字'
+            placeholder='请输入密码'
             value={this.state.value}
           />
           <Button onClick={this.doLogin}>点击登陆</Button>
