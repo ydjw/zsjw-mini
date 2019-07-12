@@ -1,5 +1,7 @@
+import 'taro-ui/dist/style/index.scss' // 全局引入一次即可
 import Taro, { Component } from '@tarojs/taro'
 import Index from './pages/index'
+
 
 import './app.scss'
 
@@ -13,7 +15,8 @@ class App extends Component {
 
   config = {
     pages: [
-      'pages/index/index'
+      'pages/login/login',
+      'pages/home/home'
     ],
     window: {
       backgroundTextStyle: 'light',
