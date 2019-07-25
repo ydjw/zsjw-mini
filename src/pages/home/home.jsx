@@ -6,14 +6,14 @@ import './style.less'
 class HomePage extends Component {
 
   state = {
-    result: {}
+    result: {},
   }
 
   componentDidMount() {
-
+    let user = Taro.getStorageSync("user")
     let data = {
       'method': 'getCjcx',
-      'xh': '2017411881',
+      'xh': user.useraccount,
     }
     let result = Api.commonGet(data)
     result.then(res => {
@@ -22,7 +22,10 @@ class HomePage extends Component {
       })
     })
 
-
+    Taro.showToast({
+      icon: 'none',
+      title: '欢迎你 ' + user.username
+    })
   }
 
   render() {
@@ -30,9 +33,6 @@ class HomePage extends Component {
     let {result} = this.state
     return (
       <View id='root-view'>
-        {
-          console.log(result)
-        }
         {
           result.map((item, index) => {
             return <View id='item-root' key={index}>
