@@ -25,7 +25,7 @@ class Login extends Component {
 
     res.then((result) => {
       if (result.data.success) {
-        Taro.setStorage('token', result.data.token)
+        Taro.setStorage({key: 'token', data: result.data.token})
         Taro.setStorage({key: "user", data: result.data.user})
         Taro.navigateTo({
           url: '/pages/home/home'
