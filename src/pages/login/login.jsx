@@ -30,6 +30,12 @@ class Login extends Component {
         Taro.navigateTo({
           url: '/pages/home/home'
         })
+      }else {
+        console.log(11);
+        Taro.showToast({
+          icon: 'none',
+          title: result.data.msg
+        })
       }
     })
   }
