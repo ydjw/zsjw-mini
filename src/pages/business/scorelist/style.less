@@ -1,0 +1,70 @@
+page {
+  height: 100%;
+  width: 100%;
+  background: whitesmoke;
+}
+
+#root-view {
+
+  #item-root {
+    position: relative;
+    height: 200px;
+    width: 100%;
+    margin-top: 5px;
+    background: white;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+
+    #kc-type {
+      margin-top: 30px;
+      margin-left: 20px;
+      background: whitesmoke;
+      width: 150px;
+      height: 150px;
+      border-radius: 75px;
+      line-height: 150px;
+      font-size: 1.0rem;
+      color: darkgray;
+    }
+
+    #kc-info {
+      margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+
+      #kc-name {
+        margin-top: 20px;
+        font-size: 1.1rem;
+        overflow: hidden;
+        width: 400px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        color: black;
+      }
+
+      #kc-name-type {
+        margin-top: 10px;
+        font-size: 0.7rem;
+        color: darkgray;
+      }
+
+      #kc-score {
+        margin-top: 10px;
+        color: darkgray;
+      }
+    }
+
+    #score {
+      font-size: 1.5rem;
+      position: absolute;
+      right: 30px;
+      top: 40px;
+      color: #009688;
+
+    }
+  }
+
+
+}

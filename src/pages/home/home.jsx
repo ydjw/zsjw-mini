@@ -1,7 +1,8 @@
 import Taro, {Component} from "@tarojs/taro";
-import {Text, View} from "@tarojs/components";
-import Api from '../../api/educations'
-import './style.less'
+import {Text, View, Image} from "@tarojs/components";
+import './style.less';
+import icKb from './img/ic_kc.png'
+import icScore from './img/ic_score_list.png'
 
 class HomePage extends Component {
 
@@ -11,16 +12,6 @@ class HomePage extends Component {
 
   componentDidMount() {
     let user = Taro.getStorageSync("user")
-    let data = {
-      'method': 'getCjcx',
-      'xh': user.useraccount,
-    }
-    let result = Api.commonGet(data)
-    result.then(res => {
-      this.setState({
-        result: res.data.result
-      })
-    })
 
     Taro.showToast({
       icon: 'none',
@@ -28,32 +19,39 @@ class HomePage extends Component {
     })
   }
 
-  render() {
+  goToNextPage(path){
+    Taro.navigateTo({
+      url: path
+    })
+  }
 
-    let {result} = this.state
+  render() {
     return (
       <View id='root-view'>
-        {
-          result.map((item, index) => {
-            return <View id='item-root' key={index}>
-              <View id='kc-type'>
-                {item.kclbmc}
-              </View>
-              <View id='kc-info'>
-                <Text id='kc-name'>
-                  {item.kcmc}
-                </Text>
-                <Text id='kc-name-type'>
-                  {item.kcxzmc}
-                </Text>
-                <Text id='kc-score'>
-                  学分值:{item.xf}
-                </Text>
-              </View>
-              <Text id='score'>{item.zcj}</Text>
-            </View>
-          })
-        }
+
+        <View id='top-view'>
+          <Text>曲园掌上教务</Text>
+        </View>
+
+        <View id='bottom-view'>
+
+          <View onClick={()=>this.goToNextPage('/pages/business/scorelist/index')}>
+            <Image src={icScore}></Image>
+
+            <Text>
+              查成绩
+            </Text>
+          </View>
+
+          <View>
+            <Image src={icKb}></Image>
+
+            <Text>
+              查课表
+            </Text>
+          </View>
+        </View>
+
       </View>
     )
   }

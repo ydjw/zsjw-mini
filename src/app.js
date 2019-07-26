@@ -16,7 +16,8 @@ class App extends Component {
   config = {
     pages: [
       'pages/login/login',
-      'pages/home/home'
+      'pages/home/home',
+      'pages/business/scorelist/index'
     ],
     window: {
       backgroundTextStyle: 'light',

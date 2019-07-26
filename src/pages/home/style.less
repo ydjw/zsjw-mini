@@ -5,66 +5,56 @@ page {
 }
 
 #root-view {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100%;
+  width: 100%;
 
-  #item-root {
-    position: relative;
-    height: 200px;
+  #top-view {
     width: 100%;
-    margin-top: 5px;
-    background: white;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
+    line-height: 300px;
+    background: #009688;
+    color: white;
+    height: 300px;
 
-    #kc-type {
-      margin-top: 30px;
-      margin-left: 20px;
-      background: whitesmoke;
-      width: 150px;
-      height: 150px;
-      border-radius: 75px;
-      line-height: 150px;
-      font-size: 1.0rem;
-      color: darkgray;
-    }
-
-    #kc-info {
-      margin-left: 30px;
-      display: flex;
-      flex-direction: column;
-      text-align: left;
-
-      #kc-name {
-        margin-top: 20px;
-        font-size: 1.1rem;
-        overflow: hidden;
-        width: 400px;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        color: black;
-      }
-
-      #kc-name-type {
-        margin-top: 10px;
-        font-size: 0.7rem;
-        color: darkgray;
-      }
-
-      #kc-score {
-        margin-top: 10px;
-        color: darkgray;
-      }
-    }
-
-    #score {
-      font-size: 1.5rem;
-      position: absolute;
-      right: 30px;
-      top: 40px;
-      color: #009688;
-
+    Text{
+      color: white;
+      font-size: 1.4rem;
+      margin-top: 80px;
     }
   }
 
+  #bottom-view {
+    padding-top: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
+    Image {
+      width: 100px;
+      height: 100px;
+      align-self: center;
+    }
+
+    Text {
+      font-size: 1.0rem;
+      margin-top: 20px;
+      color: darkgray;
+    }
+
+    View {
+      background: white;
+      width: 200px;
+      border-radius: 30px;
+      height: 200px;
+      justify-content: center;
+      display: flex;
+      margin-right: 50px;
+      margin-left: 50px;
+      flex-direction: column;
+      box-shadow: 0px 0px 10px #909090;
+    }
+
+  }
 }
